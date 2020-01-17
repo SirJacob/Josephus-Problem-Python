@@ -14,12 +14,10 @@ while soldier <= 41:
     if soldier == 1:
         solution = 1
     else:
-        # Move first bit to the end (there's probably a much better way to do this)
+        # Move first bit to the end
         binary_list = list(bin(soldier))
-        del binary_list[0]
-        del binary_list[0]
-        binary_list.append(binary_list[0])
-        del binary_list[0]
+        binary_list.append(binary_list[2])
+        del binary_list[2]
         solution = int(str(''.join(binary_list)), 2)
 
     print(f"{soldier}\t\t\t{solution}")
